@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_joke"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#35b8c4"
+    tools:context="com.santossingh.joke_androidlibrary.JokeActivity">
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/joke_text"
+              android:text="@string/Joke_demo"
+              android:padding="16dp"
+              android:textColor="#fff"
+              android:textSize="16sp"
+              android:background="#22426b"
+    />
+
+</RelativeLayout>
