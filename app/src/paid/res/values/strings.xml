@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">JokeApp_Paid_Version</string>
+    <string name="keyword">Paid</string>
 </resources>

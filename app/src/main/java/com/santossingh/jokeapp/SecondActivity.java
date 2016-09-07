@@ -77,7 +77,8 @@ public class SecondActivity extends AppCompatActivity implements AsyncResponse{
     }
 
     public void showJoke(){
-        endpointsAsyncTask.execute(new Pair<Context, String>(SecondActivity.this, "free"));
+        endpointsAsyncTask.execute(new Pair<Context, String>(SecondActivity.this, getString(R
+                .string.keyword)));
     }
 
     @Override
