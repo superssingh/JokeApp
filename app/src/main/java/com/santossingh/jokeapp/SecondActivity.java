@@ -1,10 +1,8 @@
 package com.santossingh.jokeapp;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Pair;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
@@ -22,6 +20,8 @@ public class SecondActivity extends AppCompatActivity implements AsyncResponse{
     InterstitialAd mInterstitialAd;
     EndpointsAsyncTask endpointsAsyncTask;
     ElasticDownloadView mElasticDownloadView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,8 +47,7 @@ public class SecondActivity extends AppCompatActivity implements AsyncResponse{
 
             @Override
             public void onAdClosed() {
-                mElasticDownloadView.startIntro();
-                mElasticDownloadView.setProgress(24);
+                mElasticDownloadView.setProgress(90);
                 showJoke();
             }
 
@@ -64,6 +63,7 @@ public class SecondActivity extends AppCompatActivity implements AsyncResponse{
 
             @Override
             public void onAdOpened() {
+                mElasticDownloadView.startIntro();
                 Toast.makeText(getApplicationContext(), "Ad is opened!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -77,16 +77,22 @@ public class SecondActivity extends AppCompatActivity implements AsyncResponse{
     }
 
     public void showJoke(){
-        endpointsAsyncTask.execute(new Pair<Context, String>(SecondActivity.this, getString(R
-                .string.keyword)));
+        mElasticDownloadView.success();
+        endpointsAsyncTask.execute(getString(R
+                .string.keyword));
     }
 
     @Override
     public void processFinish(String result) {
-        mElasticDownloadView.success();
         Intent intent = new Intent(SecondActivity.this, JokeActivity
                 .class)
                 .putExtra(JOKE_TAG, result);
         startActivity(intent);
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        finish();
     }
 }

@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse{
 
     public void showJoke(View view) {
         EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(this);
-        endpointsAsyncTask.execute(new Pair<Context, String>(this, getString(R.string.keyword)));
+        endpointsAsyncTask.execute(getString(R.string.keyword));
     }
 
     @Override

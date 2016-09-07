@@ -1,8 +1,8 @@
 package com.santossingh.joke_androidlibrary;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
@@ -15,5 +15,11 @@ public class JokeActivity extends AppCompatActivity {
         String data=intent.getStringExtra(joke);
         TextView textView=(TextView)findViewById(R.id.joke_text);
         textView.setText(data);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }
