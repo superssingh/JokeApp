@@ -43,4 +43,5 @@ dependencies {
     compile 'com.google.code.findbugs:jsr305:2.0.1'
     compile 'com.github.tibolte:elasticdownload:1.0.+'
     testCompile 'junit:junit:4.12'
+    androidTestCompile 'org.testng:testng:6.9.6'
 }
