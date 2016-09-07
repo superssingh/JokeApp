@@ -28,6 +28,11 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
     }
 
     @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
+
+    @Override
     protected String doInBackground(Pair<Context, String>... params) {
 
         if(myApiService == null) {  // Only do this once
@@ -49,4 +54,5 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
     protected void onPostExecute(String result) {
         listener.processFinish(result);
     }
+
 }

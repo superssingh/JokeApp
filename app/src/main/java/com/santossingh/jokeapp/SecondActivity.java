@@ -14,17 +14,20 @@ import com.santossingh.joke_androidlibrary.JokeActivity;
 import com.santossingh.jokeapp.AsyncTask.AsyncResponse;
 import com.santossingh.jokeapp.AsyncTask.EndpointsAsyncTask;
 
+import is.arontibo.library.ElasticDownloadView;
+
 public class SecondActivity extends AppCompatActivity implements AsyncResponse{
 
-    private String TAG = SecondActivity.class.getSimpleName();
     private static final String JOKE_TAG="joke";
     InterstitialAd mInterstitialAd;
     EndpointsAsyncTask endpointsAsyncTask;
+    ElasticDownloadView mElasticDownloadView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        mElasticDownloadView=(ElasticDownloadView)findViewById(R.id.elastic_download_view);
         endpointsAsyncTask = new EndpointsAsyncTask(this);
         mInterstitialAd = new InterstitialAd(this);
 
@@ -44,6 +47,8 @@ public class SecondActivity extends AppCompatActivity implements AsyncResponse{
 
             @Override
             public void onAdClosed() {
+                mElasticDownloadView.startIntro();
+                mElasticDownloadView.setProgress(24);
                 showJoke();
             }
 
@@ -77,6 +82,7 @@ public class SecondActivity extends AppCompatActivity implements AsyncResponse{
 
     @Override
     public void processFinish(String result) {
+        mElasticDownloadView.success();
         Intent intent = new Intent(SecondActivity.this, JokeActivity
                 .class)
                 .putExtra(JOKE_TAG, result);

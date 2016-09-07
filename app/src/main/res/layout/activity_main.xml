@@ -2,36 +2,10 @@
 <RelativeLayout
     android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.santossingh.jokeapp.MainActivity">
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/instructions"
-        android:id="@+id/instruction_TextView"
-    />
-
-    <Button android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button_jokeTeller"
-            android:layout_below="@+id/instruction_TextView"
-            android:text="@string/button_text"
-            android:onClick="showJoke"
-    />
-
-    <!-- view for AdMob Banner Ad -->
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/banner_ad_unit_id"/>
 
 </RelativeLayout>

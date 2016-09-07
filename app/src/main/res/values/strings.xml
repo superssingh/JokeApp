@@ -6,9 +6,4 @@
     <!-- -
         This is an ad unit ID for a banner test ad. Replace with your own banner ad unit id.
         For more information, see https://support.google.com/admob/answer/3052638-->
-
-    <string name="banner_ad_unit_id">ca-app-pub-1940925551314668/1726703435</string>
-    <string name="interstitial_ad_unit_id">ca-app-pub-1940925551314668/4680169839</string>
-    <string name="interstitial_ad_demo">C04B1BFFB0774708339BC273F8A43708</string>
-
 </resources>
