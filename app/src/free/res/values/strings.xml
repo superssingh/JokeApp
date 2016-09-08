@@ -3,4 +3,7 @@
     <string name="banner_ad_unit_id">ca-app-pub-1940925551314668/1726703435</string>
     <string name="interstitial_ad_unit_id">ca-app-pub-1940925551314668/4680169839</string>
     <string name="keyword">Free</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
