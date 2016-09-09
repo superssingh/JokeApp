@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
@@ -19,23 +20,32 @@ import com.santossingh.jokeapp.AsyncTask.EndpointsAsyncTask;
 import com.santossingh.jokeapp.R;
 import com.wang.avi.AVLoadingIndicatorView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity implements AsyncResponse {
 
 //Due to Null_Pointer_Exception with AdView and Button Butternife bind not working.
 //For solution I just follow simple findViewById method. Here is the stackoverflow link :
 
     private static final String JOKE_TAG = "joke";
-    //    @BindView(R.id.avi) AVLoadingIndicatorView avLoadingIndicatorView;
-//    @BindView(R.id.button_jokeTeller) Button button_JokeTeller;
-//    @BindView(R.id.instruction_TextView) TextView instruction;
-//    @BindView(R.id.container) RelativeLayout relativeLayout;
-//    @BindView(R.id.adView) AdView adView;
-//    @BindView(R.id.progressBar) LinearLayout linearLayout;
-    Button button_JokeTeller;
-    RelativeLayout relativeLayout;
-    LinearLayout linearLayout;
+    @BindView(R.id.avi)
     AVLoadingIndicatorView avLoadingIndicatorView;
+    @BindView(R.id.button_jokeTeller)
+    Button button_JokeTeller;
+    @BindView(R.id.instruction_TextView)
+    TextView instruction;
+    @BindView(R.id.container)
+    RelativeLayout relativeLayout;
+    @BindView(R.id.adView)
     AdView adView;
+    @BindView(R.id.progressBar)
+    LinearLayout linearLayout;
+    //    Button button_JokeTeller;
+//    RelativeLayout relativeLayout;
+//    LinearLayout linearLayout;
+//    AVLoadingIndicatorView avLoadingIndicatorView;
+//    AdView adView;
     EndpointsAsyncTask endpointsAsyncTask;
     private InterstitialAd mInterstitialAd;
 
@@ -43,19 +53,8 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        // ButterKnife.bind(this);
-// With ButterKnife has occured issue about NullPointerException.
-// I stuck with that for two days and nights.
-// When I'll obtain solution update my projects.
-// my question link in stackoverflow.com
-//"http://stackoverflow.com/questions/39401662/how-to-solve-nullpointerexception-void-com-google-android-gms-ads-adview-loadad"
-
-        button_JokeTeller = (Button) findViewById(R.id.button_jokeTeller);
-        adView = (AdView) findViewById(R.id.adView);
-        relativeLayout = (RelativeLayout) findViewById(R.id.container);
-        linearLayout = (LinearLayout) findViewById(R.id.progressBar);
-
+        ButterKnife.bind(this);
+        showProgressbar(false);
         endpointsAsyncTask = new EndpointsAsyncTask(this);
         // Load ads
         AdRequest adRequestBanner = new AdRequest.Builder().build();
