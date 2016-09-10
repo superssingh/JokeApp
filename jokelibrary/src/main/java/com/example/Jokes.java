@@ -25,7 +25,7 @@ public class Jokes {
 
     public String getJoke(String type){
         Random rm = new Random();
-        if (type.equalsIgnoreCase("paid")){
+        if (type.equalsIgnoreCase("Paid")) {
             return paidjoke[rm.nextInt(paidjoke.length)];
         }else{
             return freejoke[rm.nextInt(freejoke.length)];

@@ -6,21 +6,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0c689e"
+    android:padding="10dp"
     tools:context="com.santossingh.jokeapp.paid.MainActivity">
+    <LinearLayout
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
 
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="@string/instructions"
-    android:id="@+id/instruction_TextView"
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/avi"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:indicatorColor="#18fdb8"
+            app:indicatorName="BallClipRotatePulseIndicator"
+        />
+    </LinearLayout>
+
+    <LinearLayout android:id="@+id/contents"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_alignParentLeft="true"
+                  android:layout_alignParentStart="true" android:layout_alignParentTop="true"
+                  android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/instruction_TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/instructions"
+            android:textColor="#fff"
     />
 
-    <Button android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/button_jokeTeller"
-    android:layout_below="@+id/instruction_TextView"
-    android:text="@string/button_text"
-    android:onClick="showJoke"
+        <Button android:id="@+id/button_jokeTeller"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/instruction_TextView"
+                android:onClick="showJoke"
+                android:text="@string/button_text"
     />
+    </LinearLayout>
 
 </RelativeLayout>

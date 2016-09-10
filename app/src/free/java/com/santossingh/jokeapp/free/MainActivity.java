@@ -29,18 +29,12 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
 //For solution I just follow simple findViewById method. Here is the stackoverflow link :
 
     private static final String JOKE_TAG = "joke";
-    @BindView(R.id.avi)
-    AVLoadingIndicatorView avLoadingIndicatorView;
-    @BindView(R.id.button_jokeTeller)
-    Button button_JokeTeller;
-    @BindView(R.id.instruction_TextView)
-    TextView instruction;
-    @BindView(R.id.container)
-    RelativeLayout relativeLayout;
-    @BindView(R.id.adView)
-    AdView adView;
-    @BindView(R.id.progressBar)
-    LinearLayout linearLayout;
+    @BindView(R.id.avi) AVLoadingIndicatorView avLoadingIndicatorView;
+    @BindView(R.id.button_jokeTeller) Button button_JokeTeller;
+    @BindView(R.id.instruction_TextView) TextView instruction;
+    @BindView(R.id.container) RelativeLayout relativeLayout;
+    @BindView(R.id.progressBar) LinearLayout linearLayout;
+    @BindView(R.id.adView) AdView adView;
     //    Button button_JokeTeller;
 //    RelativeLayout relativeLayout;
 //    LinearLayout linearLayout;
@@ -63,11 +57,11 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse {
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
         AdRequest adRequestInterstitial = new AdRequest.Builder().build();
-        mInterstitialAd.loadAd(adRequestInterstitial);
 
         button_JokeTeller.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mInterstitialAd.loadAd(adRequestInterstitial);
                 showInterstitial();
             }
         });
